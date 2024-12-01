@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
 
-        View::share('settings', Setting::take(1)->first());
+        View::share('settings', Setting::first());
     }
 }
