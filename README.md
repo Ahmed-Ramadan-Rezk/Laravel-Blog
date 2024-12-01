@@ -41,7 +41,13 @@ copy .env.example .env
 
 Open the .env file and update the necessary configurations, such as database settings.
 
-5. **Run the Application**
+5. **Seed the Database**
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+6. **Run the Application**
 
 ```bash
 npm run dev

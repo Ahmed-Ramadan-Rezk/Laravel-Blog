@@ -1,23 +1,16 @@
 <?php
 
+use App\Http\Controllers\{SiteController, AboutController, ContactController, PostController};
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [SiteController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/posts', function () {
-    return view('posts.index');
-});
+Route::post('/contact', [ContactController::class, 'store'])->name('contact');
 
-Route::get('/posts/{id}', function () {
-    return view('posts.show');
-});
+Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/posts/{post}', [PostController::class, 'show']);
