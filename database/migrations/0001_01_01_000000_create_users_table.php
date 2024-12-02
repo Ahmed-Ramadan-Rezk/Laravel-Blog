@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('role')->default(0);
             $table->boolean('is_active')->default(1);
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

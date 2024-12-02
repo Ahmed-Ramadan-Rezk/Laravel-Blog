@@ -13,48 +13,40 @@
         soon
         as possible!</p>
     <div class="my-5">
-        <form action="{{route('contact')}}" method="POST">
-            @csrf
-            @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-            <div class="form-floating">
-                <input class="form-control" name="name" type="text" placeholder="Enter your name..."
-                    data-sb-validations="required" />
-                <div class="text-danger sm pt-2">{{ $errors->first('name') }}</div>
-                <label for="name">Name</label>
-                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-            </div>
-            <div class="form-floating">
-                <input class="form-control" name="email" type="email" placeholder="Enter your email..."
-                    data-sb-validations="required,email" />
-                <div class="text-danger sm pt-2">{{ $errors->first('email') }}</div>
-                <label for="email">Email address</label>
-                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.
-                </div>
-                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-            </div>
-            <div class="form-floating">
-                <input class="form-control" name="phone" type="tel" placeholder="Enter your phone number..."
-                    data-sb-validations="required" />
-                <div class="text-danger sm pt-2">{{ $errors->first('phone') }}</div>
-                <label for="phone">Phone Number</label>
-                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
-                    required.
-                </div>
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" name="message" placeholder="Enter your message here..."
-                    style="height: 12rem" data-sb-validations="required"></textarea>
-                <div class="text-danger sm pt-2">{{ $errors->first('message') }}</div>
-                <label for="message">Message</label>
-                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
-                </div>
-            </div>
-            <br />
-            <!-- Submit Button-->
-            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
-        </form>
+        <x-forms.form action="{{route('contact')}}" method="POST">
+
+            <x-forms.success name="message-sent" />
+
+            <x-forms.field>
+                <x-forms.input id="name" name="name" type="text" placeholder="Enter your name..." />
+                <x-forms.label for="name">Name</x-forms.label>
+                <x-forms.error name="name" />
+            </x-forms.field>
+
+            <x-forms.field>
+                <x-forms.input id="email" name="email" type="email" placeholder="Enter your email..." />
+                <x-forms.label for="email">Email address</x-forms.label>
+                <x-forms.error name="email" />
+            </x-forms.field>
+
+            <x-forms.field>
+                <x-forms.input id="phone" name="phone" type="tel" placeholder="Enter your phone number..." />
+                <x-forms.label for="phone">Phone Number</x-forms.label>
+                <x-forms.error name="phone" />
+            </x-forms.field>
+
+            <x-forms.field>
+                <x-forms.input field="textarea" id="message" name="message" placeholder="Enter your message here...">
+                </x-forms.input>
+                <x-forms.label for="message">Message</x-forms.label>
+                <x-forms.error name="message" />
+            </x-forms.field>
+
+            <x-forms.divider />
+
+            <x-forms.button>Send</x-forms.button>
+
+        </x-forms.form>
     </div>
 
 </x-app-layout>

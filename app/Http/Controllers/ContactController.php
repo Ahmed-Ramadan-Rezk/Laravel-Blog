@@ -7,7 +7,7 @@ use App\Http\Requests\MessageRequest;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function create()
     {
         return view('contact');
     }
@@ -16,6 +16,6 @@ class ContactController extends Controller
     {
         Message::create($request->validated());
 
-        return to_route('contact')->with('success', 'Your message has been sent successfully.');
+        return to_route('contact')->with('message-sent', 'Your message has been sent successfully.');
     }
 }

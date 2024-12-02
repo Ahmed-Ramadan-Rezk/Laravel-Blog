@@ -9,6 +9,6 @@
         </x-page-heading>
     </x-slot:header>
 
-    <x-post-card :posts="$posts" />
+    <x-post-card :$posts />
 
 </x-app-layout>
