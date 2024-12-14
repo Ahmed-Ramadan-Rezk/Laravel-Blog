@@ -36,7 +36,8 @@
             </x-forms.field>
 
             <x-forms.field>
-                <x-forms.input field="textarea" id="message" name="message" placeholder="Enter your message here...">
+                <x-forms.input style="height: 12rem" field="textarea" id="message" name="message"
+                    placeholder="Enter your message here...">
                 </x-forms.input>
                 <x-forms.label for="message">Message</x-forms.label>
                 <x-forms.error name="message" />

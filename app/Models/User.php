@@ -21,6 +21,19 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
+        'is_admin',
+        'is_active',
+        'about',
+        'company',
+        'job',
+        'country',
+        'address',
+        'phone',
+        'twitter',
+        'facebook',
+        'instagram',
+        'linkedin',
     ];
 
     /**
@@ -49,5 +62,15 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 }

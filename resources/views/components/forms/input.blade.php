@@ -3,5 +3,5 @@
 @if ($field === 'input')
 <input {{ $attributes(['class'=> 'form-control']) }} />
 @else
-<textarea {{ $attributes->merge(['class'=> 'form-control', 'style' => 'height: 12rem']) }}></textarea>
+<textarea {{ $attributes(['class'=> 'form-control']) }}>{{ $slot }}</textarea>
 @endif

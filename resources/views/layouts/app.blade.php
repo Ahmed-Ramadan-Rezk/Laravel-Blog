@@ -18,6 +18,7 @@
         rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/blogs/blog-3/assets/css/blog-3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Core theme CSS (includes Bootstrap)-->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -25,7 +26,7 @@
 <body>
     @include('layouts.navigation')
 
-    {{ $header }}
+    {{ $header ?? '' }}
 
     <!-- Main Content-->
     <main class="mb-4">
