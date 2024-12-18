@@ -9,7 +9,7 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\DashboardController;
 
-Route::middleware(['auth', 'UserIsActive'])->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 

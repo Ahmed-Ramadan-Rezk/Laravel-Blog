@@ -20,7 +20,7 @@ class SettingController extends Controller
 
     public function update(UpdateSiteSettings $request, $id): RedirectResponse
     {
-        $setting = Setting::find($id);
+        $setting = Setting::findOrFail($id);
         Gate::authorize('admin', $setting);
         $validated = $request->validated();
 
